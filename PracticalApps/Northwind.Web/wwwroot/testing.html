@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>1. <b>HTTP request methods:</b> GET, HEAD, POST, PUT, DELETE, OPTIONS, TRACE</p>
+    <p>2. <b>HTTP status codes:</b> 404 (Not found), 200 (OK), 202 (Accepted),
+    301 (Moved permanently), 400 (Bad request), 401 (Unauthorized), 403 (Forbidden),
+    418 (I'm a teapot)</p>
+    <p>3. <b>Startup class used for:</b> configure services (Razor Pages, DBContext, ...)
+    and configure middleware pipeline (routing, endpoints)</p>
+    <p>4. <b>HSTS (HTTP Strict Transport Security):</b> web browser connect to a server only
+    via HTTPS (TLS/SSL)</p>
+    <p>5. <b>Static HTML pages:</b> app.UseDefaultFiles(); app.UseStaticFiles();</p>
+    <p>6. <b>Dynamic page:</b> .cshtml (Razor) @page @function{ }</p>
+    <p>7. <b>Shared layouts:</b> Pages\Shared\_Layout.cshtml - @RenderBody</p>
+    <p>8. <b>Markup:</b> .cshtml (@model MyModel ... @Model.Suppliers);
+    <b>Code-behind:</b> .cshtml.cs (class MyModel : PageModel)</p>
+    <p>9. <b>EFCore in ASP.NET Core:</b> services.AddDBContext(); OnGet - get data;
+    OnPost - set data</p>
+    <p>10. <b>Partial:</b> .cshtml - partial name="_Employee" model="employee"
+    Pages\_Employee.cshtml @Model.FirstName</p>
+</body>
+</html>

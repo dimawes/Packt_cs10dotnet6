@@ -1,0 +1,52 @@
+﻿@page
+@using West.Shared
+@model Northwind.Web.Pages.CustomerOrdersPageModel
+@{
+    string title = "Customer info and orders";
+    ViewData["Title"] = $"Northwind B2B - {title}";
+    Customer customer = Model.Customer!;
+    int i = 0;
+}
+<div class="row">
+    <h1 class="display-3">@customer.CompanyName</h1>
+</div>
+<hr />
+<div class="row">
+    <h1 class="display-6">Contact details</h1>
+    <p><b>Contact:</b> @customer.ContactTitle - @customer.ContactName</p>
+    <p><b>Location:</b> @customer.Country, @customer.City, @customer.Address</p>
+    <p><b>Postal code:</b> @customer.PostalCode</p>
+    <p><b>Phone:</b> @customer.Phone</p>
+    <p><b>Fax:</b> @customer.Fax</p>
+</div>
+<hr />
+<div class="row">
+    <h1 class="display-6">Orders</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ship name</th>
+                <th scope="col">Ship address</th>
+                <th scope="col">Order date</th>
+                <th scope="col">Required date</th>
+                <th scope="col">Shipped date</th>
+                <th scope="col">Freight</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in customer.Orders)
+        {
+            <tr>
+                <th scope="row">@(++i)</th>
+                <td>@order.ShipName</td>
+                <td>@order.ShipCountry, @order.ShipCity, @order.ShipAddress</td>
+                <td>@order.OrderDate</td>
+                <td>@order.RequiredDate</td>
+                <td>@order.ShippedDate</td>
+                <td>@order.Freight</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

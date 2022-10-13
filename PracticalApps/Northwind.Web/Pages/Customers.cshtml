@@ -1,0 +1,26 @@
+﻿@page
+@model Northwind.Web.Pages.CustomersPageModel;
+
+<div class="row">
+    <h1 class="display-2">Customers</h1>
+</div>
+<div class="row">
+@foreach (var country in Model.Customers)
+{
+    <div class="col-sm-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">@country.Key</div>
+            <ul class="list-group list-group-flush">
+            @foreach (var customer in country.ToArray())
+            {
+                <li class="list-group-item">
+                    <a href="customerorders?id=@customer.CustomerId">
+                        @customer.CompanyName
+                    </a>
+                </li>
+            }   
+            </ul>
+        </div>
+    </div>
+}
+</div>
